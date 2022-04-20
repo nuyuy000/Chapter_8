@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.regis_fragment">
+
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="56dp"
+        android:src="@drawable/header"
+        app:layout_constraintBottom_toTopOf="@id/tv_username"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_username"
+        android:textColor="#FFA3A0A0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="Username"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toTopOf="@id/et_username"/>
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="350dp"
+        android:layout_height="50sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="144dp"
+        android:background="@drawable/custom_edit_abu"
+        android:hint="Masukkan Username "
+        android:textColorHint="#CFCBCB"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:textSize="17dp"
+        android:textColor="#A3A0A0"
+        android:id="@+id/tv_usr"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        app:layout_constraintBottom_toTopOf="@id/et_email"
+        app:layout_constraintTop_toBottomOf="@id/et_username"/>
+
+
+    <EditText
+        android:background="@drawable/custom_edit_abu"
+        android:id="@+id/et_email"
+        android:hint="Masukkan Password "
+        android:textSize="17dp"
+        android:layout_width="350dp"
+        android:textColorHint="#FFCFCBCB"
+        app:layout_constraintLeft_toLeftOf="@id/et_username"
+        app:layout_constraintRight_toRightOf="@id/et_username"
+        app:layout_constraintTop_toBottomOf="@id/tv_usr"
+        android:layout_height="50sp"/>
+    <TextView
+        android:id="@+id/tv_uml"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="#FFA3A0A0"
+        android:text="Password"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toTopOf="@id/et_password"
+        app:layout_constraintTop_toBottomOf="@id/et_email"/>
+
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="344dp"
+        android:layout_height="56dp"
+        android:background="@drawable/custom_edit_abu"
+        android:hint="Confirm Password "
+        android:textColorHint="#FFCFCBCB"
+        app:layout_constraintLeft_toLeftOf="@id/et_email"
+        app:layout_constraintRight_toRightOf="@id/et_email"
+        app:layout_constraintTop_toBottomOf="@id/tv_uml" />
+
+    <Button
+        android:id="@+id/btn_regis"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="156dp"
+        android:text="Daftar"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_password" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/textdaftar"
+        app:layout_constraintBottom_toTopOf="@id/btn_regis"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

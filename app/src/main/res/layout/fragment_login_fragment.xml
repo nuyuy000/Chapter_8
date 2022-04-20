@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:background="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/iv_mola"
+        android:layout_width="144dp"
+        android:layout_height="163dp"
+        android:layout_marginStart="112dp"
+        android:layout_marginBottom="40dp"
+        android:src="@drawable/mola"
+        app:layout_constraintBottom_toTopOf="@id/tv_username"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <EditText
+        android:id="@+id/tv_username"
+        android:layout_width="0dp"
+        android:layout_height="40sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/custom_edittetext"
+        android:hint="Masukkan Username "
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_mola" />
+
+    <EditText
+        android:id="@+id/tv_password"
+        android:textColor="@color/white"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/custom_edittetext"
+        android:hint="Masukkan Password"
+        android:layout_marginTop="5dp"
+        android:textColorHint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_username" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="0dp"
+        android:layout_height="50sp"
+        android:layout_marginTop="44dp"
+        android:text="Login"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_password"/>
+
+    <TextView
+        android:id="@+id/tvblm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50sp"
+        android:text="Belum Punya Akun? "
+        android:textSize="16dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_login"/>
+    <TextView
+        android:id="@+id/tv_daftar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daftar Sekarang "
+        android:textSize="16dp"
+        android:layout_marginStart="8dp"
+        android:textColor="#19639E"
+       app:layout_constraintStart_toEndOf="@id/tvblm"
+        app:layout_constraintTop_toTopOf="@id/tvblm"
+        android:textAlignment="center" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
