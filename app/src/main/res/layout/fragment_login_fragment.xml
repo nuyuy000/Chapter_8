@@ -4,14 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
-    android:background="@color/black"
+    android:background="@color/hitamabu"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
         android:id="@+id/iv_mola"
-        android:layout_width="144dp"
+        android:layout_width="match_parent"
         android:layout_height="163dp"
-        android:layout_marginStart="112dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginEnd="11dp"
         android:layout_marginBottom="40dp"
         android:src="@drawable/mola"
         app:layout_constraintBottom_toTopOf="@id/tv_username"
@@ -29,6 +30,7 @@
         android:hint="Masukkan Username "
         android:textColorHint="@color/white"
         android:textColor="@color/white"
+        android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_mola" />
@@ -40,6 +42,7 @@
         android:layout_height="40dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:padding="10dp"
         android:background="@drawable/custom_edittetext"
         android:hint="Masukkan Password"
         android:layout_marginTop="5dp"

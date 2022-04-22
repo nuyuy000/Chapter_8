@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/login_fragment">
+    app:startDestination="@id/listFilm">
 
     <fragment
         android:id="@+id/login_fragment"
-        android:name="com.example.chapter5.login_fragment"
+        android:name="com.example.chapter5.activity.LoginFragment"
         android:label="fragment_login_fragment"
         tools:layout="@layout/fragment_login_fragment" >
         <action

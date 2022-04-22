@@ -49,7 +49,7 @@ class regis_fragment : Fragment() {
                     runBlocking(Dispatchers.Main) {
                         if (regis!=0.toLong()){
                             Toast.makeText(requireContext(), "Berhasil Registrasi", Toast.LENGTH_SHORT).show()
-                            findNavController().navigate(R.id.action_login_fragment_to_regis_fragment)
+                            findNavController().navigate(R.id.action_regis_fragment_to_login_fragment)
                         }
                         else {
                             Toast.makeText(requireContext(), "Gagal Registrasi", Toast.LENGTH_SHORT).show()
