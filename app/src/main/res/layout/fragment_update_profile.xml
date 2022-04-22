@@ -5,13 +5,13 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/hitamabu"
-    tools:context=".UpdateProfile">
+    tools:context=".activity.UpdateProfile">
 
     <TextView
         android:id="@+id/tv_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:text="Edit Profile"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -24,7 +24,7 @@
     <ImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="15dp"
         android:src="@drawable/ic_user_profile_svgrepo_com"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -35,8 +35,9 @@
         android:id="@+id/et_nama"
         android:layout_width="match_parent"
         android:layout_height="40sp"
-        android:layout_marginTop="180dp"
+        android:layout_marginTop="130dp"
         android:layout_marginStart="16dp"
+        android:padding="10dp"
         android:layout_marginEnd="16dp"
         android:hint="Your Name  "
         android:textColor="#CFCBCB"
@@ -57,11 +58,12 @@
         android:id="@+id/et_emial"
         android:layout_width="match_parent"
         android:layout_height="40sp"
-        android:layout_marginTop="52dp"
-        android:background="@drawable/custom_edit_abu"
-        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/custom_edit_abu"
         android:hint="Your Email "
+        android:padding="10dp"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/et_nama"
         tools:layout_editor_absoluteX="16dp" />
@@ -76,15 +78,17 @@
         app:layout_constraintBottom_toTopOf="@id/et_emial"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <EditText
         android:id="@+id/et_password"
         android:layout_width="match_parent"
         android:layout_height="40sp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/custom_edit_abu"
+        android:hint="Your Password "
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:hint="Your Password "
+        android:padding="10dp"
         android:textColor="#CFCBCB"
         app:layout_constraintTop_toBottomOf="@id/et_emial"
         tools:layout_editor_absoluteX="16dp" />
@@ -103,20 +107,111 @@
         android:id="@+id/btn_update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="28dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="Update"
         app:layout_constraintTop_toBottomOf="@id/et_password"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="16dp" />
+
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:text="Log Out"
         app:layout_constraintTop_toBottomOf="@id/btn_update"
         tools:layout_editor_absoluteX="0dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical"
+        android:layout_marginTop="90sp"
+        app:layout_constraintTop_toBottomOf="@id/btn_logout"
+        android:layout_height="70dp">
+
+        <ImageView
+            android:id="@+id/beranda"
+            android:layout_width="50sp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/beranda"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.017"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/caribiru"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.268"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="50sp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/jadwal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="0dp"
+            android:layout_marginStart="204dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/game"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnprofil"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageButton
+            android:id="@+id/btnprofil"
+            android:layout_width="50sp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/black"
+            android:src="@drawable/profilebiru"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.979"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hitamabu"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".databases.DetailMovie">
+
+    <ImageView
+        android:id="@+id/image_load"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:src="@drawable/mola"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/judulload"
+            android:layout_width="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="judul"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_star_rate_24"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/judulload" />
+
+        <TextView
+            android:id="@+id/rating_load"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="rating"
+            android:textSize="17dp"
+            android:textAlignment="center"
+            android:textColor="#FDFCFC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/judulload" />
+
+        <TextView
+            android:id="@+id/genre_load"
+            android:layout_width="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/white"
+            android:text="Genre"
+            android:textAlignment="center"
+            android:textSize="17dp"
+            app:layout_constraintTop_toBottomOf="@id/rating_load"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/deskripsi_load"
+            android:layout_width="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/white"
+            android:text="Deskripsi"
+            android:textSize="17dp"
+            app:layout_constraintTop_toBottomOf="@id/genre_load"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>

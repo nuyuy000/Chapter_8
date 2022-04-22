@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/updateProfile">
+    app:startDestination="@id/login_fragment">
 
     <fragment
         android:id="@+id/login_fragment"
@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_login_fragment_to_regis_fragment"
             app:destination="@id/regis_fragment" />
+        <action
+            android:id="@+id/action_login_fragment_to_listFilm"
+            app:destination="@id/listFilm" />
     </fragment>
     <fragment
         android:id="@+id/regis_fragment"
@@ -25,12 +28,28 @@
     </fragment>
     <fragment
         android:id="@+id/listFilm"
-        android:name="com.example.chapter5.ListFilm"
+        android:name="com.example.chapter5.activity.ListFilm"
         android:label="fragment_list_film"
-        tools:layout="@layout/fragment_list_film" />
+        tools:layout="@layout/fragment_list_film" >
+        <action
+            android:id="@+id/action_listFilm_to_detailMovie"
+            app:destination="@id/detailMovie" />
+        <action
+            android:id="@+id/action_listFilm_to_updateProfile"
+            app:destination="@id/updateProfile" />
+    </fragment>
     <fragment
         android:id="@+id/updateProfile"
-        android:name="com.example.chapter5.UpdateProfile"
+        android:name="com.example.chapter5.activity.UpdateProfile"
         android:label="fragment_update_profile"
-        tools:layout="@layout/fragment_update_profile" />
+        tools:layout="@layout/fragment_update_profile" >
+        <action
+            android:id="@+id/action_updateProfile_to_login_fragment"
+            app:destination="@id/login_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailMovie"
+        android:name="com.example.chapter5.databases.DetailMovie"
+        android:label="fragment_detail_movie"
+        tools:layout="@layout/fragment_detail_movie" />
 </navigation>

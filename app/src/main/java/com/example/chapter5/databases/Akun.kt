@@ -12,5 +12,7 @@ data class Akun(
     var username : String?,
     @ColumnInfo(name = "password")
     var password : String?,
+//    @ColumnInfo(name = "email")
+//    var email : String?,
 )
 

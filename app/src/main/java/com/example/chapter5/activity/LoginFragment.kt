@@ -48,6 +48,7 @@ class LoginFragment : Fragment() {
                         if (regis != null) {
                             Toast.makeText(requireContext(), "Berhasil Login", Toast.LENGTH_SHORT)
                                 .show()
+                            findNavController().navigate(R.id.action_login_fragment_to_listFilm)
                         } else {
                             Toast.makeText(
                                 requireContext(),

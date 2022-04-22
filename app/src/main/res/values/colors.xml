@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="hitamabu">#1B1A1A</color>
+    <color name="kuning">#FFC107</color>
 </resources>
