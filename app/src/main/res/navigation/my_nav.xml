@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/listFilm">
+    app:startDestination="@id/updateProfile">
 
     <fragment
         android:id="@+id/login_fragment"
@@ -28,4 +28,9 @@
         android:name="com.example.chapter5.ListFilm"
         android:label="fragment_list_film"
         tools:layout="@layout/fragment_list_film" />
+    <fragment
+        android:id="@+id/updateProfile"
+        android:name="com.example.chapter5.UpdateProfile"
+        android:label="fragment_update_profile"
+        tools:layout="@layout/fragment_update_profile" />
 </navigation>
