@@ -15,13 +15,14 @@ import com.example.chapter5.databinding.FragmentLoginFragmentBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import org.koin.android.ext.android.inject
 
 //import com.example.chapter5.model.AkunRepository
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginFragmentBinding? = null
     private val binding get() = _binding!!
-    lateinit var akunRepository: AkunRepository
+    private val  akunRepository by inject<AkunRepository>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +35,12 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        akunRepository = AkunRepository(requireContext())
+        akunRepository.emailPreferences().observe(viewLifecycleOwner) {
+          if (it!="") {
+              findNavController().navigate(R.id.action_login_fragment_to_listFilm)
+
+          }
+        }
         binding.btnLogin.setOnClickListener {
             if (binding.tvPassword.text.isEmpty() || binding.tvUsername.text.isEmpty()) {
                 Toast.makeText(requireContext(), "Kolom Masih Kosong", Toast.LENGTH_SHORT).show()
@@ -48,6 +54,9 @@ class LoginFragment : Fragment() {
                         if (regis != null) {
                             Toast.makeText(requireContext(), "Berhasil Login", Toast.LENGTH_SHORT)
                                 .show()
+                            lifecycleScope.launch(Dispatchers.IO) {
+                                akunRepository.setEmailPreference(regis.username.toString())
+                            }
                             findNavController().navigate(R.id.action_login_fragment_to_listFilm)
                         } else {
                             Toast.makeText(

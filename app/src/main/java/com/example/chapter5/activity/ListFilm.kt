@@ -14,11 +14,12 @@ import com.example.chapter5.databases.ResultX
 import com.example.chapter5.databinding.FragmentListFilmBinding
 import com.example.chapter5.model.MovieAdapter
 import com.example.chapter5.model.MovieViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ListFilm : Fragment() {
     private var _binding: FragmentListFilmBinding? = null
     private val binding get() = _binding!!
-    lateinit var movieViewModel: MovieViewModel
+    private val movieViewModel by viewModel<MovieViewModel>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,7 +31,6 @@ class ListFilm : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        movieViewModel = ViewModelProvider(requireActivity())[MovieViewModel::class.java]
         movieViewModel.dataMovie.observe(viewLifecycleOwner){
             showlistmovie(it.results)
         }

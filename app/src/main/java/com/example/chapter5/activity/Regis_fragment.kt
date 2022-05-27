@@ -16,11 +16,12 @@ import com.example.chapter5.databinding.FragmentRegisFragmentBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import org.koin.android.ext.android.inject
 
 class regis_fragment : Fragment() {
     private var _binding: FragmentRegisFragmentBinding? = null
     private val binding get() = _binding!!
-    lateinit var akunRepository: AkunRepository
+    private val  akunRepository by inject<AkunRepository>()
 
 
     override fun onCreateView(
@@ -34,7 +35,6 @@ class regis_fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        akunRepository = AkunRepository(requireContext())
         binding.btnRegis.setOnClickListener{
             if (binding.etUsername.text.toString().isEmpty() || binding.etPassword.text.isEmpty() || binding.etEmail.text.isEmpty()) {
                 Toast.makeText(requireContext(), "Form Tidak Boleh Kosong ", Toast.LENGTH_SHORT).show()

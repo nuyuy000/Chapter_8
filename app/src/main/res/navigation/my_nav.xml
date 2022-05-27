@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/login_fragment">
+    app:startDestination="@id/splashScreen">
 
     <fragment
         android:id="@+id/login_fragment"
@@ -52,4 +52,16 @@
         android:name="com.example.chapter5.databases.DetailMovie"
         android:label="fragment_detail_movie"
         tools:layout="@layout/fragment_detail_movie" />
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.chapter5.activity.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_login_fragment"
+            app:destination="@id/login_fragment" />
+        <action
+            android:id="@+id/action_splashScreen_to_listFilm"
+            app:destination="@id/listFilm" />
+    </fragment>
 </navigation>

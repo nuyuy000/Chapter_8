@@ -10,24 +10,4 @@ abstract class AkunDatabase : RoomDatabase() {
 
     abstract fun akunDao(): AkunDao
 
-    companion object {
-
-        @Volatile
-        private var INSTANCE: AkunDatabase? = null
-        fun getInstance(context: Context): AkunDatabase? {
-            if (INSTANCE == null) {
-                INSTANCE = Room.databaseBuilder(
-                    context.applicationContext,
-                    AkunDatabase::class.java, "akun.db"
-                ).build()
-
-            }
-            return INSTANCE
-
-        }
-
-        fun destroyInstance() {
-            INSTANCE = null
-        }
-    }
 }

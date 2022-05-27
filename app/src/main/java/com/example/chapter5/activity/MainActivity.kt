@@ -10,5 +10,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-
+    companion object{
+        const val SHARED_FILE = "sharedfile"
+    }
 }

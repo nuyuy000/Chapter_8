@@ -9,11 +9,13 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.chapter5.databinding.FragmentDetailMovieBinding
 import com.example.chapter5.model.MovieViewModel
+import org.koin.android.ext.android.inject
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DetailMovie : Fragment() {
     private var _binding: FragmentDetailMovieBinding? = null
     private val binding get() = _binding!!
-    lateinit var movieViewModel: MovieViewModel
+    private val movieViewModel by viewModel<MovieViewModel>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,7 +27,6 @@ class DetailMovie : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        movieViewModel = ViewModelProvider(requireActivity())[MovieViewModel::class.java]
         movieViewModel.detailMovie.observe(viewLifecycleOwner){
             //menampilkan detail movie
             binding.apply {
