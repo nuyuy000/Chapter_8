@@ -1,40 +1,25 @@
 package com.example.chapter5.databases
 
-import android.content.Context
 import androidx.lifecycle.asLiveData
 import com.example.chapter5.datastore.UserDataStore
-import kotlinx.coroutines.coroutineScope
-
-class AkunRepository (private val DbAkun: AkunDatabase, private val userPref: UserDataStore) {
 
 
-    suspend fun login(username: String, password: String): Akun? = coroutineScope {
-        return@coroutineScope DbAkun.akunDao().login(username, password)
-    }
+class AkunRepository(private val userDao: UserDao, private val userPref: UserDataStore) {
 
-    suspend fun addUser(akun: Akun): Long = coroutineScope {
-        return@coroutineScope DbAkun.akunDao().insertUser(akun)
-    }
+    //room
+    fun login(email: String, password: String):User? = userDao.login(email, password)
+    fun register(user: User):Long = userDao.insertUser(user)
+    fun checkEmailIfExist(email: String): User? = userDao.checkEmailExist(email)
+    suspend fun getUser(email: String): User? = userDao.getUser(email)
+    fun updateUser(user: User):Int = userDao.updatetUser(user)
+    suspend fun updateAvatarPath(id:Int,avatarPath:String):Int = userDao.updateAvatarPath(id, avatarPath)
 
-    suspend fun setEmailPreference(email: String){
-        coroutineScope { userPref.setEmail(email) }
-    }
+    //data store
+    suspend fun setEmail(email: String) = userPref.setEmail(email)
+    suspend fun setNama(nama: String) = userPref.setNama(nama)
+    fun getEmail() = userPref.getEmail.asLiveData()
+    suspend fun deletePref() = userPref.deletePref()
 
-    suspend fun setNamaPreference(nama: String){
-        coroutineScope { userPref.setNama(nama) }
-    }
-    suspend fun deletePref() = coroutineScope { userPref.deletePref() }
 
-    fun emailPreferences () = userPref.getEmail.asLiveData()
 
-//
-//    //
-//    suspend fun update(user: Akun): Int? = coroutineScope {
-//        return@coroutineScope DbAkun?.akunDao()?.updateuser(user)
-//    }
-////
-//    suspend fun getuser(email: String): Akun? = coroutineScope {
-//        return@coroutineScope DbAkun?.akunDao()?.getuser(email)
-//
-//    }
 }

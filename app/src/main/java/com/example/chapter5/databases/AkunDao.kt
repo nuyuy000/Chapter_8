@@ -2,27 +2,25 @@ package com.example.chapter5.databases
 
 import androidx.room.*
 
-
 @Dao
-interface AkunDao {
-    @Query("SELECT * FROM akun WHERE  username = :username AND password = :password")
-    fun login(username: String, password: String):Akun?
+interface UserDao {
 
-    @Query("SELECT * FROM Akun WHERE username = :email")
-    fun checkEmailExist(email: String):Akun?
+    @Query("SELECT * FROM User WHERE email = :email AND password = :password")
+    fun login(email: String, password: String): User?
+
+    @Query("SELECT * FROM User WHERE email = :email")
+    fun checkEmailExist(email: String):User?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertUser(akun: Akun):Long
+    fun insertUser(user: User):Long
 
-    @Query("SELECT * FROM Akun WHERE username = :email")
-    fun getUser(email: String): Akun?
+    @Query("SELECT * FROM User WHERE email = :email")
+    suspend fun getUser(email: String): User?
 
     @Update
-    fun updatetUser(akun: Akun):Int
-//
-//    @Query("SELECT * FROM akun WHERE email =:email")
-//    fun getuser(email: String):Akun?
-//
-//    @Update
-//    fun updateuser(user: Akun):Int
+    fun updatetUser(user: User):Int
+
+    @Query("UPDATE User SET avatarPath=:avatarPath WHERE id=:id")
+    suspend fun updateAvatarPath(id: Int,avatarPath: String):Int
+
 }
